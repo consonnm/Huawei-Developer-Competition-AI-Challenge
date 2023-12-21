@@ -1,0 +1,47 @@
+{
+    "model_type": "MindSpore",
+    "model_algorithm": "predict_analysis",
+    "runtime":"mindspore_2.2.0-cann_7.0.1-py_3.9-euler_2.10.7-aarch64",
+    "apis": [{
+            "url": "/",
+            "method": "post",
+            "request": {
+                "Content-type": "multipart/form-data",
+                "data": {
+                    "type": "object",
+                    "properties": {
+                        "input_txt": {
+                            "type": "file"
+                        }
+                    },
+                    "required": ["input_txt"]
+                }
+            },
+            "response": {
+                "Content-type": "application/json",
+                "data": {
+                    "type": "object",
+                    "properties": {
+                        "id": {
+                            "type": "string"
+                        },
+                        "choice": {
+                            "type": "string"
+                        },
+                        "created": {
+                            "type": "integer"
+                        },
+                        "prompt_tokens": {
+                            "type": "integer"
+                        },
+                        "total_tokens": {
+                            "type": "integer"
+                        },
+                        "response": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        }]
+}
